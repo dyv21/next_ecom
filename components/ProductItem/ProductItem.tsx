@@ -129,7 +129,6 @@ const ProductListItem = React.forwardRef<HTMLDivElement, ProductListItemProps>(
               <ul className="mt-auto flex items-center justify-center space-x-3 pt-6">
                 {availableColors.map((color) => (
                   <li
-
                     className="h-2 w-2 rounded-full border border-default-300 border-opacity-10"
                     style={{ backgroundColor: color.hex }}
                   >
@@ -146,20 +145,22 @@ const ProductListItem = React.forwardRef<HTMLDivElement, ProductListItemProps>(
               hidden: isPopular,
             })}
           >
-            <h3 className="text-medium font-medium text-default-700">{title}</h3>
+            <h3 className="text-medium font-medium text-default-700 truncate w-40">
+              {title}
+            </h3>
             <p className="text-medium font-medium text-default-500">${price}</p>
           </div>
           {description && !isPopular ? (
-            <p className="text-small text-default-500">{description}</p>
+            <p className="text-small text-default-500 line-clamp-3">
+              {description}
+            </p>
           ) : null}
           {rating !== undefined ? (
             <RatingRadioGroup
               hideStarsText
               isReadOnly
               className="gap-1"
-              label={
-                <p className="text-small text-default-400">({ratingCount})</p>
-              }
+              label={<p className="text-small text-default-400">{rating}</p>}
               size="sm"
               value={`${rating}`}
             />
