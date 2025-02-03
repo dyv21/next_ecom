@@ -5,7 +5,7 @@ import { Button, Image } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { cn } from "@heroui/react";
 import RatingRadioGroup from "@/components/Radio/RatingRadioGroup";
-
+import { Link } from "@heroui/link";
 
 export type ProductListItemColor = {
   name: string;
@@ -39,6 +39,7 @@ export type ProductListItemProps = Omit<
 const ProductListItem = React.forwardRef<HTMLDivElement, ProductListItemProps>(
   (
     {
+      id,
       title,
       price,
       rating,
@@ -111,6 +112,7 @@ const ProductListItem = React.forwardRef<HTMLDivElement, ProductListItemProps>(
             </h3>
             <p className="text-small text-default-500">{description}</p>
           </div>
+          <Link href={`/catalog/${id}`}>
           <Image
             removeWrapper
             alt={title}
@@ -123,6 +125,7 @@ const ProductListItem = React.forwardRef<HTMLDivElement, ProductListItemProps>(
             )}
             src={thumbnail}
           />
+            </Link>
           {hasColors ? (
             <div className="absolute bottom-3">
               <h4 className="sr-only">Available colors</h4>
@@ -145,9 +148,11 @@ const ProductListItem = React.forwardRef<HTMLDivElement, ProductListItemProps>(
               hidden: isPopular,
             })}
           >
-            <h3 className="text-medium font-medium text-default-700 truncate w-40">
-              {title}
-            </h3>
+            <Link href={`/catalog/${id}`}>
+              <h3 className="text-medium font-medium text-default-700 truncate w-40">
+                {title}
+              </h3>
+            </Link>
             <p className="text-medium font-medium text-default-500">${price}</p>
           </div>
           {description && !isPopular ? (
