@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
+import { API } from "@/shared/api/api";
 
 export type ProductType = {
   id: string;
@@ -25,9 +26,8 @@ export const useFetchProduct = (): Nullable<ProductType> => {
 
   useEffect(() => {
     setIsLoading(true);
-    axios
-      .get(`${process.env.NEXT_PUBLIC_BASE_URL}/products/${router.query.id}`)
-      .then((res) =>  setProduct(res.data))
+    API.getSingleProduct(router.query.id)
+      .then((res) => setProduct(res.data))
       .catch((err) => setError(err.message))
       .finally(() => setIsLoading(false));
   }, []);
