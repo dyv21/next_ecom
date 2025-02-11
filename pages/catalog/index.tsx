@@ -31,7 +31,6 @@ export const getStaticProps: GetStaticProps<PropsType> = async () => {
 
 const Catalog = (props: PropsType) => {
   const { goodsList, error } = props;
-  debugger;
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">

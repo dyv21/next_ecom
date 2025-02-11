@@ -53,7 +53,7 @@ export type ProductViewInfoProps = Omit<
 
 const details = [
   {
-    title: "Size & Fit",
+    title: "Information",
     items: [
       "Fits small; we recommend ordering a half size up",
       "Mid-weight, non-stretchy fabric",
@@ -94,14 +94,13 @@ const ProductViewInfo = React.forwardRef<HTMLDivElement, ProductViewInfoProps>(
       isPopular,
       className,
       reviews,
-      brand = 'no Brand',
+      brand = "no Brand",
       ...props
     },
     ref,
   ) => {
     const [isStarred, setIsStarred] = React.useState(false);
     const [selectedImage, setSelectedImage] = React.useState(images[0]);
-    document.title = title;
 
     const brandToUrl = (brand: string) =>
       brand.toLowerCase().split(" ").join("_");
