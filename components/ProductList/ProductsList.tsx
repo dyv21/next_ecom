@@ -8,7 +8,7 @@ export type ProductGridProps = React.HTMLAttributes<HTMLDivElement> & {
   itemClassName?: string;
 };
 
-const ProductsGrid = React.forwardRef<HTMLDivElement, ProductGridProps>(
+const ProductsList = React.forwardRef<HTMLDivElement, ProductGridProps>(
   ({ itemClassName, className, ...props }, ref) => {
     const { goodsList, loading, error } = useFetchGoods();
     {
@@ -42,6 +42,6 @@ const ProductsGrid = React.forwardRef<HTMLDivElement, ProductGridProps>(
   },
 );
 
-ProductsGrid.displayName = "ProductsGrid";
+ProductsList.displayName = "ProductsGrid";
 
-export default ProductsGrid;
+export default ProductsList;
