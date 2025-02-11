@@ -6,7 +6,8 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
+    "lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix",
+    "deploy": "next build && gh-pages -d out"
   },
   "dependencies": {
     "@heroui/button": "2.2.9",
@@ -51,6 +52,7 @@
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-unused-imports": "4.1.4",
+    "gh-pages": "^6.3.0",
     "globals": "^15.14.0",
     "postcss": "8.4.49",
     "prettier": "3.3.3",
