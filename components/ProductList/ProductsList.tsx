@@ -29,15 +29,6 @@ const ProductsList = React.forwardRef<HTMLDivElement, ProductListProps>(
         {/*  ? Array.from({ length: 20 })*/}
         {/*      .fill(null)*/}
         {/*      .map((_, i) => <SkeletonComponent />)*/}
-        {/*  : goodsList &&*/}
-        {/*    goodsList.map((product) => (*/}
-        {/*      <ProductListItem*/}
-        {/*        key={product.id}*/}
-        {/*        removeWrapper*/}
-        {/*        {...product}*/}
-        {/*        className={cn("w-full snap-start", itemClassName)}*/}
-        {/*      />*/}
-        {/*    ))}*/}
 
         {goodsList &&
           goodsList.map((product) => (
