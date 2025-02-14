@@ -5,12 +5,12 @@ import { ProductThumbType, useFetchGoods } from "@/hooks/useFetchGoods";
 import SkeletonComponent from "@/components/Skeleton/Skeleton";
 
 export type ProductListProps = React.HTMLAttributes<HTMLDivElement> & {
-  goodsList: ProductThumbType[];
+  products: ProductThumbType[];
 };
 
 const ProductsList = React.forwardRef<HTMLDivElement, ProductListProps>(
   (props, ref) => {
-    const { goodsList } = props;
+    const { products } = props;
 
     // const { goodsList, loading, error } = useFetchGoods();
     // {
@@ -30,8 +30,8 @@ const ProductsList = React.forwardRef<HTMLDivElement, ProductListProps>(
         {/*      .fill(null)*/}
         {/*      .map((_, i) => <SkeletonComponent />)*/}
 
-        {goodsList &&
-          goodsList.map((product) => (
+        {products &&
+          products.map((product) => (
             <ProductListItem
               key={product.id}
               removeWrapper

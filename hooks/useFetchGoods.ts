@@ -19,7 +19,7 @@ export const useFetchGoods = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    API.getGoods()
+    API.getProducts()
       .then((res) => setGoodsList(res.data.products))
       .catch((err) => setError(err.message))
       .finally(() => setIsLoading(false));

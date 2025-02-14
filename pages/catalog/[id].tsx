@@ -2,16 +2,19 @@ import ProductViewItem from "@/components/ProductViewItem/ProductViewItem";
 import { ProductType, useFetchProduct } from "@/hooks/useFetchProduct";
 import DefaultLayout from "@/layouts/default";
 import { API } from "@/shared/api/api";
+import { GetStaticProps } from "next";
+import { ProductThumbType } from "@/hooks/useFetchGoods";
 
 type PropsType = {
-  product: ProductType;
+  product: ProductType | null;
   error: null | string;
 };
 
 export const getStaticPaths = async () => {
   try {
-    const res = await API.getGoods();
-    const paths = res.data.products.map((product: ProductType) => ({
+    const res = await API.getProducts();
+
+    const paths = res.data.products.map((product: ProductThumbType) => ({
       params: { id: product.id.toString() },
     }));
     return {
@@ -26,7 +29,7 @@ export const getStaticPaths = async () => {
   }
 };
 
-export const getStaticProps = async ({
+export const getStaticProps: GetStaticProps<PropsType> = async ({
   params,
 }: {
   params: { id: string };
@@ -49,9 +52,7 @@ export const getStaticProps = async ({
   }
 };
 
-function Product(props: PropsType) {
-  const { product, error } = props;
-
+function Product({ product, error }: PropsType) {
   // const product = useFetchProduct()
   return (
     <DefaultLayout>
