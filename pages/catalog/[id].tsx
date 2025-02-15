@@ -6,7 +6,7 @@ import { GetStaticProps } from "next";
 import { ProductThumbType } from "@/hooks/useFetchGoods";
 
 type PropsType = {
-  product: ProductType | null;
+  product: ProductType;
   error: null | string;
 };
 
@@ -29,7 +29,7 @@ export const getStaticPaths = async () => {
   }
 };
 
-export const getStaticProps: GetStaticProps<PropsType> = async ({
+export const getStaticProps = async ({
   params,
 }: {
   params: { id: string };

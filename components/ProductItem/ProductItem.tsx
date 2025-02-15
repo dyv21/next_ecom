@@ -46,18 +46,16 @@ const ProductListItem = React.forwardRef<HTMLDivElement, ProductListItemProps>(
       ratingCount,
       description,
       imageSrc,
-      isNew,
       isPopular,
-      availableColors,
       removeWrapper,
       className,
       thumbnail,
+      isNew,
       ...props
     },
     ref,
   ) => {
     const [isStarred, setIsStarred] = React.useState(false);
-    const hasColors = availableColors && availableColors?.length > 0;
 
     return (
       <div
@@ -69,7 +67,6 @@ const ProductListItem = React.forwardRef<HTMLDivElement, ProductListItemProps>(
           },
           className,
         )}
-        {...props}
       >
         {isNew && isPopular ? (
           <span className="absolute right-7 top-7 z-20 text-tiny font-semibold text-default-400">
@@ -113,34 +110,18 @@ const ProductListItem = React.forwardRef<HTMLDivElement, ProductListItemProps>(
             <p className="text-small text-default-500">{description}</p>
           </div>
           <Link href={`/catalog/${id}`}>
-          <Image
-            removeWrapper
-            alt={title}
-            className={cn(
-              "z-0 h-full max-h-full w-full max-w-[80%] overflow-visible object-contain object-center hover:scale-110",
-              {
-                "flex h-56 w-56 items-center": isPopular,
-                "mb-2": hasColors,
-              },
-            )}
-            src={thumbnail}
-          />
-            </Link>
-          {hasColors ? (
-            <div className="absolute bottom-3">
-              <h4 className="sr-only">Available colors</h4>
-              <ul className="mt-auto flex items-center justify-center space-x-3 pt-6">
-                {availableColors.map((color) => (
-                  <li
-                    className="h-2 w-2 rounded-full border border-default-300 border-opacity-10"
-                    style={{ backgroundColor: color.hex }}
-                  >
-                    <span className="sr-only"></span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
+            <Image
+              removeWrapper
+              alt={title}
+              className={cn(
+                "z-0 h-full max-h-full w-full max-w-[80%] overflow-visible object-contain object-center hover:scale-110",
+                {
+                  "flex h-56 w-56 items-center": isPopular,
+                },
+              )}
+              src={thumbnail}
+            />
+          </Link>
         </div>
         <div className="flex flex-col gap-3 px-1">
           <div

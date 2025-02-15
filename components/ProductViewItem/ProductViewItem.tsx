@@ -38,8 +38,6 @@ export type ProductViewItem = {
   isPopular?: boolean;
   reviews?: [];
   brand: string;
-
-  availableColors?: ProductViewItemColor[];
 };
 
 export type ProductViewInfoProps = Omit<
@@ -88,7 +86,6 @@ const ProductViewInfo = React.forwardRef<HTMLDivElement, ProductViewInfoProps>(
       price,
       sizes,
       description,
-      availableColors,
       rating,
       ratingCount,
       isPopular,
@@ -122,7 +119,6 @@ const ProductViewInfo = React.forwardRef<HTMLDivElement, ProductViewInfoProps>(
             "relative flex flex-col gap-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8",
             className,
           )}
-          {...props}
         >
           {/* Product Gallery */}
           <div className="relative h-full w-full flex-none">
@@ -283,7 +279,8 @@ const ProductViewInfo = React.forwardRef<HTMLDivElement, ProductViewInfoProps>(
         </div>
         <div className="mt-4">
           <h1 className={"text-lg mt-4 mb-4"}>Reviews</h1>
-          {reviews && reviews.map((review) => <Review review={review} />)}
+          {reviews &&
+            reviews.map((review, i) => <Review review={review} key={i} />)}
         </div>
       </>
     );
