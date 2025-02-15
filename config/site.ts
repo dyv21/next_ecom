@@ -10,11 +10,7 @@ export const siteConfig = {
     },
     {
       label: "Catalog",
-      href: "/catalog",
-    },
-    {
-      label: "Brands",
-      href: "/brands",
+      href: "/catalog/",
     },
   ],
   navMenuItems: [
@@ -24,18 +20,14 @@ export const siteConfig = {
     },
     {
       label: "Catalog",
-      href: "/catalog",
-    },
-    {
-      label: "Brands",
-      href: "/brands",
+      href: "/catalog/",
     },
   ],
   links: {
-    github: "https://github.com/heroui-inc/heroui",
-    twitter: "https://twitter.com/hero_ui",
+    github: "https://github.com/",
+    twitter: "https://twitter.com",
     docs: "https://heroui.com",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    discord: "https://discord.gg",
+    sponsor: "https://patreon.com/",
   },
 };
