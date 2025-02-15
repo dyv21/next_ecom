@@ -22,6 +22,10 @@ export const siteConfig = {
       label: "Catalog",
       href: "/catalog/",
     },
+    {
+      label: "Sign-in",
+      href: "/auth/",
+    },
   ],
   links: {
     github: "https://github.com/",
@@ -29,5 +33,6 @@ export const siteConfig = {
     docs: "https://heroui.com",
     discord: "https://discord.gg",
     sponsor: "https://patreon.com/",
+    signin: "auth/",
   },
 };

@@ -16,7 +16,7 @@ import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { GithubIcon, SearchIcon, Logo } from "@/components/icons";
+import { SearchIcon, Logo } from "@/components/icons";
 import { button as buttonStyles } from "@heroui/theme";
 
 export const Navbar = () => {
@@ -80,7 +80,8 @@ export const Navbar = () => {
               radius: "full",
               variant: "shadow",
             })}
-            href={"#"}
+            href={siteConfig.links.signin}
+            target={"_self"}
           >
             Sign-in
           </Link>
