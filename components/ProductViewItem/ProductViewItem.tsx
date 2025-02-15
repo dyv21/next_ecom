@@ -15,8 +15,6 @@ import {
 import { Icon } from "@iconify/react";
 import { cn } from "@heroui/react";
 
-// import ColorRadioItem from "./color-radio-item";
-// import TagGroupRadioItem from "./tag-group-radio-item";
 import RatingRadioGroup from "@/components/Radio/RatingRadioGroup";
 import { Breadcrumbs } from "@heroui/breadcrumbs";
 import Review from "@/components/Review/Review";
@@ -91,7 +89,7 @@ const ProductViewInfo = React.forwardRef<HTMLDivElement, ProductViewInfoProps>(
       isPopular,
       className,
       reviews,
-      brand = "no Brand",
+      brand = "unknown",
       ...props
     },
     ref,
@@ -108,9 +106,14 @@ const ProductViewInfo = React.forwardRef<HTMLDivElement, ProductViewInfoProps>(
           <BreadcrumbItem>
             <Link href={"/"}>Home</Link>
           </BreadcrumbItem>
-          <BreadcrumbItem>
-            <Link href={`/${brandToUrl(brand)}`}>{brand}</Link>
-          </BreadcrumbItem>
+          {brand === "unknown" ? (
+            ""
+          ) : (
+            <BreadcrumbItem>
+              <Link href={`/${brandToUrl(brand)}`}>{brand}</Link>
+            </BreadcrumbItem>
+          )}
+
           <BreadcrumbItem>{title}</BreadcrumbItem>
         </Breadcrumbs>
         <div
@@ -181,19 +184,6 @@ const ProductViewInfo = React.forwardRef<HTMLDivElement, ProductViewInfoProps>(
                 {description}1
               </p>
             </div>
-            {/*<RadioGroup*/}
-            {/*  aria-label="Color"*/}
-            {/*  classNames={{*/}
-            {/*    base: "ml-1 mt-6",*/}
-            {/*    wrapper: "gap-2",*/}
-            {/*  }}*/}
-            {/*  defaultValue={availableColors?.at(0)?.hex}*/}
-            {/*  orientation="horizontal"*/}
-            {/*>*/}
-            {/*  {availableColors?.map(({name, hex}) => (*/}
-            {/*    <ColorRadioItem key={name} color={hex} tooltip={name} value={hex} />*/}
-            {/*  ))}*/}
-            {/*</RadioGroup>*/}
             <div className="mt-6 flex flex-col gap-1">
               <div className="mb-4 flex items-center gap-2 text-default-700">
                 <Icon icon="carbon:delivery" width={24} />
@@ -201,18 +191,6 @@ const ProductViewInfo = React.forwardRef<HTMLDivElement, ProductViewInfoProps>(
                   Free shipping and 30 days return
                 </p>
               </div>
-              {/*<RadioGroup*/}
-              {/*  aria-label="Select size"*/}
-              {/*  className="gap-1"*/}
-              {/*  defaultValue="39"*/}
-              {/*  orientation="horizontal"*/}
-              {/*>*/}
-              {/*  {sizes?.map((size) => (*/}
-              {/*    <TagGroupRadioItem key={size} size="lg" value={size}>*/}
-              {/*      {size}*/}
-              {/*    </TagGroupRadioItem>*/}
-              {/*  ))}*/}
-              {/*</RadioGroup>*/}
               <Link
                 isExternal
                 className="my-2 text-default-400"
