@@ -18,6 +18,7 @@ import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { SearchIcon, Logo } from "@/components/icons";
 import { button as buttonStyles } from "@heroui/theme";
+import { ButtonWithBorderGradient } from "@/components/ButtonWithBorderGradient/ButtonWithBorderGradient";
 
 export const Navbar = () => {
   const searchInput = (
@@ -72,19 +73,13 @@ export const Navbar = () => {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
-        <NavbarItem className="hidden lg:flex">
-          <Link
-            isExternal
-            className={buttonStyles({
-              color: "primary",
-              radius: "full",
-              variant: "shadow",
-            })}
+        <NavbarItem>
+          <ButtonWithBorderGradient
             href={siteConfig.links.signin}
             target={"_self"}
           >
             Sign-in
-          </Link>
+          </ButtonWithBorderGradient>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
         <NavbarItem className="hidden sm:flex gap-2">

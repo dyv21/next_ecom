@@ -1,8 +1,7 @@
 import ProductViewItem from "@/components/ProductViewItem/ProductViewItem";
-import { ProductType, useFetchProduct } from "@/hooks/useFetchProduct";
+import { ProductType } from "@/hooks/useFetchProduct";
 import DefaultLayout from "@/layouts/default";
 import { API } from "@/shared/api/api";
-import { GetStaticProps } from "next";
 import { ProductThumbType } from "@/hooks/useFetchGoods";
 
 type PropsType = {
@@ -53,7 +52,6 @@ export const getStaticProps = async ({
 };
 
 function Product({ product, error }: PropsType) {
-  // const product = useFetchProduct()
   return (
     <DefaultLayout>
       {error ? <h3>{error}</h3> : <ProductViewItem {...product} />}

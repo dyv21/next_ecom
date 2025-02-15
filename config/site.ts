@@ -33,6 +33,6 @@ export const siteConfig = {
     docs: "https://heroui.com",
     discord: "https://discord.gg",
     sponsor: "https://patreon.com/",
-    signin: "auth/",
+    signin: "/auth/",
   },
 };
