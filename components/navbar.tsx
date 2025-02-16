@@ -17,7 +17,6 @@ import clsx from "clsx";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { SearchIcon, Logo } from "@/components/icons";
-import { button as buttonStyles } from "@heroui/theme";
 import { ButtonWithBorderGradient } from "@/components/ButtonWithBorderGradient/ButtonWithBorderGradient";
 
 export const Navbar = () => {
@@ -95,7 +94,7 @@ export const Navbar = () => {
       <NavbarMenu>
         {searchInput}
         <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navMenuItems.map((item, index) => (
+          {siteConfig.navMenuItems.map((item) => (
             <NavbarMenuItem key={item.href}>
               <Link color={"foreground"} href={item.href} size="lg">
                 {item.label}
