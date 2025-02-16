@@ -23,6 +23,10 @@ export const siteConfig = {
       href: "/catalog/",
     },
     {
+      label: "Shopping cart",
+      href: "/checkout/",
+    },
+    {
       label: "Sign-in",
       href: "/auth/",
     },
@@ -34,5 +38,6 @@ export const siteConfig = {
     discord: "https://discord.gg",
     sponsor: "https://patreon.com/",
     signin: "/auth/",
+    cart: "/checkout/",
   },
 };

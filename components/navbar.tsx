@@ -18,6 +18,9 @@ import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { SearchIcon, Logo } from "@/components/icons";
 import { ButtonWithBorderGradient } from "@/components/ButtonWithBorderGradient/ButtonWithBorderGradient";
+import { Icon } from "@iconify/react";
+import React from "react";
+import { ShoppingCart } from "@/components/ShoppingCart/ShoppingCart";
 
 export const Navbar = () => {
   const searchInput = (
@@ -83,6 +86,9 @@ export const Navbar = () => {
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
         <NavbarItem className="hidden sm:flex gap-2">
           <ThemeSwitch />
+        </NavbarItem>
+        <NavbarItem>
+          <ShoppingCart />
         </NavbarItem>
       </NavbarContent>
 
