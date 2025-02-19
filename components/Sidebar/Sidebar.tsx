@@ -1,12 +1,5 @@
 import { Listbox, ListboxItem } from "@heroui/react";
 
-// @ts-ignore
-export const ListboxWrapper = ({ children }) => (
-  <div className="w-full max-w-[260px] border-small px-1 py-2 rounded-small border-default-200 dark:border-default-100">
-    {children}
-  </div>
-);
-
 export default function App() {
   const items = [
     {
@@ -28,7 +21,7 @@ export default function App() {
   ];
 
   return (
-    <ListboxWrapper>
+    <div className="w-full max-w-[260px] border-small px-1 py-2 rounded-small border-default-200 dark:border-default-100">
       <Listbox
         aria-label="Dynamic Actions"
         items={items}
@@ -44,6 +37,6 @@ export default function App() {
           </ListboxItem>
         )}
       </Listbox>
-    </ListboxWrapper>
+    </div>
   );
 }
