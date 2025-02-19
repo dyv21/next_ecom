@@ -4,6 +4,7 @@ import ProductsList from "@/components/ProductList/ProductsList";
 import { API } from "@/shared/api/api";
 import { ProductThumbType } from "@/hooks/useFetchGoods";
 import { GetStaticProps } from "next";
+import Sidebar from "@/components/Sidebar/Sidebar";
 
 type PropsType = {
   products: ProductThumbType[];
@@ -32,7 +33,8 @@ export const getStaticProps: GetStaticProps<PropsType> = async () => {
 const Catalog = ({ products, error }: PropsType) => {
   return (
     <DefaultLayout>
-      <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+      <section className="flex justify-center gap-4 py-8 md:py-10">
+        <Sidebar />
         <div className="inline-block text-center justify-center">
           <h1 className={title({ color: "violet" })}>Catalog</h1>
           {error ? <h3>{error}</h3> : <ProductsList products={products} />}

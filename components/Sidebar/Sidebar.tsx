@@ -1,6 +1,6 @@
 import { Listbox, ListboxItem } from "@heroui/react";
 
-export default function App() {
+export default function Sidebar() {
   const items = [
     {
       key: "new",
@@ -21,7 +21,7 @@ export default function App() {
   ];
 
   return (
-    <div className="w-full max-w-[260px] border-small px-1 py-2 rounded-small border-default-200 dark:border-default-100">
+    <div className="w-full max-w-[260px] px-1 py-2 mt-10">
       <Listbox
         aria-label="Dynamic Actions"
         items={items}
