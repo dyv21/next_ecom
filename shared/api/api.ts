@@ -8,4 +8,7 @@ export const API = {
 
   getSingleProduct: (id: string): Promise<AxiosResponse<ProductThumbType>> =>
     instance.get(`/products/${id}`),
+
+  getCategories: (): Promise<AxiosResponse<string[]>> =>
+    instance.get("/products/category-list"),
 };
