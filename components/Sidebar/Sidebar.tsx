@@ -1,32 +1,22 @@
 import { Listbox, ListboxItem } from "@heroui/react";
 
-export default function Sidebar() {
-  const items = [
-    {
-      key: "new",
-      label: "New file",
-    },
-    {
-      key: "copy",
-      label: "Copy link",
-    },
-    {
-      key: "edit",
-      label: "Edit file",
-    },
-    {
-      key: "delete",
-      label: "Delete file",
-    },
-  ];
+type PropsType = {
+  categories: string[];
+};
+
+export default function Sidebar(props: PropsType) {
+  const { categories } = props;
+
+  const items = categories.map((category) => {
+    return {
+      key: category,
+      label: category.split("-").join(" ").toUpperCase(),
+    };
+  });
 
   return (
-    <div className="w-full max-w-[260px] px-1 py-2 mt-10">
-      <Listbox
-        aria-label="Dynamic Actions"
-        items={items}
-        onAction={(key) => alert(key)}
-      >
+    <div className="hidden lg:block w-full max-w-[260px] px-1 py-2 mt-10">
+      <Listbox aria-label="Dynamic Actions" items={items}>
         {(item) => (
           <ListboxItem
             key={item.key}

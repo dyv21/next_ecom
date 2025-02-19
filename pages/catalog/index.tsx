@@ -8,15 +8,18 @@ import Sidebar from "@/components/Sidebar/Sidebar";
 
 type PropsType = {
   products: ProductThumbType[];
+  categories: string[];
   error: string | null;
 };
 
 export const getStaticProps: GetStaticProps<PropsType> = async () => {
   try {
     const res = await API.getProducts();
+    const categories = await API.getCategories();
     return {
       props: {
         products: res.data.products,
+        categories: categories.data,
         error: null,
       },
     };
@@ -24,17 +27,18 @@ export const getStaticProps: GetStaticProps<PropsType> = async () => {
     return {
       props: {
         products: [],
+        categories: [],
         error: error.message || "Ошибка загрузки данных",
       },
     };
   }
 };
 
-const Catalog = ({ products, error }: PropsType) => {
+const Catalog = ({ products, categories, error }: PropsType) => {
   return (
     <DefaultLayout>
       <section className="flex justify-center gap-4 py-8 md:py-10">
-        <Sidebar />
+        <Sidebar categories={categories} />
         <div className="inline-block text-center justify-center">
           <h1 className={title({ color: "violet" })}>Catalog</h1>
           {error ? <h3>{error}</h3> : <ProductsList products={products} />}
