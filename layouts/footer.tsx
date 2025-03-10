@@ -5,7 +5,7 @@ import type { IconProps } from "@iconify/react";
 import React from "react";
 import { Button, Input, Link } from "@heroui/react";
 import { Icon } from "@iconify/react";
-import { ThemeSwitch } from "@/components/theme-switch";
+import { ThemeSwitch } from "@/shared/ui/theme-switch/theme-switch";
 
 type SocialIconProps = Omit<IconProps, "icon">;
 
