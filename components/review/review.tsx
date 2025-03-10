@@ -1,5 +1,5 @@
 import React from "react";
-import CardReview from "@/components/Review/CardReview";
+import CardReview from "@/components/review/card-review";
 
 type ReviewProps = {
   review: {
@@ -15,7 +15,9 @@ export default function Review(props: ReviewProps) {
   return (
     <div className="flex flex-col gap-4 mb-5">
       <CardReview
-        content={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus, distinctio placeat quas qui quibusdam quod rem tenetur. '}
+        content={
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus, distinctio placeat quas qui quibusdam quod rem tenetur. "
+        }
         createdAt="2021-08-01T12:00:00.000Z"
         rating={rating}
         title={comment}
@@ -24,7 +26,6 @@ export default function Review(props: ReviewProps) {
           avatar: `https://i.pravatar.cc/15${Math.floor(Math.random() * 9)}`,
         }}
       />
-
     </div>
   );
 }

@@ -13,17 +13,17 @@ import {
 } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { AnimatePresence, LazyMotion, m, domAnimation } from "framer-motion";
-import OrderSummary from "@/components/Checkout/order-summary";
-import cartItems from "@/components/Checkout/cart-items";
-import ShippingForm from "@/components/Checkout/shipping-form";
-import PaymentMethodRadio from "@/components/Checkout/payment-method-radio";
+import OrderSummary from "@/components/checkout/order-summary";
+import cartItems from "@/components/checkout/cart-items";
+import ShippingForm from "@/components/checkout/shipping-form";
+import PaymentMethodRadio from "@/components/checkout/payment-method-radio";
 import {
   MasterCardIcon,
   PayPalIcon,
   VisaIcon,
-} from "@/components/Checkout/providers";
-import PaymentForm from "@/components/Checkout/payment-form";
-import { AcmeIcon } from "@/components/Checkout/acme";
+} from "@/components/checkout/providers";
+import PaymentForm from "@/components/checkout/payment-form";
+import { AcmeIcon } from "@/components/checkout/acme";
 import DefaultLayout from "@/layouts/default";
 
 export default function Component() {
@@ -68,13 +68,13 @@ export default function Component() {
   const stepTitle = React.useMemo(() => {
     switch (page) {
       case 0:
-        return "Review your order";
+        return "review your order";
       case 1:
         return "Where should we send your order?";
       case 2:
         return "How would you like to pay?";
       default:
-        return "Review your order";
+        return "review your order";
     }
   }, [page]);
 

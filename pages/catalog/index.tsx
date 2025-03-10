@@ -1,10 +1,10 @@
 import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
-import ProductsList from "@/components/ProductList/ProductsList";
+import ProductsList from "@/components/products-list/products-list";
 import { API } from "@/shared/api/api";
 import { ProductThumbType } from "@/hooks/useFetchGoods";
 import { GetStaticProps } from "next";
-import Sidebar from "@/components/Sidebar/Sidebar";
+import Sidebar from "@/components/sdebar/sidebar";
 
 type PropsType = {
   products: ProductThumbType[];

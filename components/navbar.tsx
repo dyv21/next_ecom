@@ -15,12 +15,12 @@ import NextLink from "next/link";
 import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "@/components/theme-switch";
+import { ThemeSwitch } from "@/components/theme-switch/theme-switch";
 import { SearchIcon, Logo } from "@/components/icons";
-import { ButtonWithBorderGradient } from "@/components/ButtonWithBorderGradient/ButtonWithBorderGradient";
 import { Icon } from "@iconify/react";
 import React from "react";
-import { ShoppingCart } from "@/components/ShoppingCart/ShoppingCart";
+import { ShoppingCart } from "@/components/shopping-cart/shopping-cart";
+import { ButtonWithBorderGradient } from "@/shared/ui/button-with-border-gradient/button-with-border-gradient";
 
 export const Navbar = () => {
   const searchInput = (

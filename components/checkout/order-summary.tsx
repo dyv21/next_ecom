@@ -4,7 +4,7 @@ import React from "react";
 import { Button, Divider, Input } from "@heroui/react";
 import OrderSummaryItem, {
   OrderSummaryItemType,
-} from "@/components/Checkout/order-summary-item";
+} from "@/components/checkout/order-summary-item";
 
 export type OrderSummaryProps = React.HTMLAttributes<HTMLDivElement> & {
   hideTitle?: boolean;

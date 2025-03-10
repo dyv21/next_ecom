@@ -15,9 +15,9 @@ import {
 import { Icon } from "@iconify/react";
 import { cn } from "@heroui/react";
 
-import RatingRadioGroup from "@/components/Radio/RatingRadioGroup";
 import { Breadcrumbs } from "@heroui/breadcrumbs";
-import Review from "@/components/Review/Review";
+import Review from "@/components/review/review";
+import RatingRadioGroup from "@/shared/ui/radio/rating-radio-group";
 
 export type ProductViewItemColor = {
   name: string;

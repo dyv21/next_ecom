@@ -4,8 +4,9 @@ import React from "react";
 import { Button, Image } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { cn } from "@heroui/react";
-import RatingRadioGroup from "@/components/Radio/RatingRadioGroup";
+
 import { Link } from "@heroui/link";
+import RatingRadioGroup from "@/shared/ui/radio/rating-radio-group";
 
 export type ProductListItemColor = {
   name: string;

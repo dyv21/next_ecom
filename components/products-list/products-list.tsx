@@ -1,8 +1,8 @@
 import React from "react";
 import { cn } from "@heroui/react";
-import ProductListItem from "@/components/ProductItem/ProductItem";
+import ProductListItem from "@/components/product-item/product-item";
 import { ProductThumbType, useFetchGoods } from "@/hooks/useFetchGoods";
-import SkeletonComponent from "@/components/Skeleton/Skeleton";
+import SkeletonComponent from "@/components/skeleton/skeleton";
 
 export type ProductListProps = React.HTMLAttributes<HTMLDivElement> & {
   products: ProductThumbType[];

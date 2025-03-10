@@ -1,4 +1,4 @@
-import ProductViewItem from "@/components/ProductViewItem/ProductViewItem";
+import ProductViewItem from "@/components/product-view-item/product-view-item";
 import { ProductType } from "@/hooks/useFetchProduct";
 import DefaultLayout from "@/layouts/default";
 import { API } from "@/shared/api/api";
