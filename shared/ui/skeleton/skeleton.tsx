@@ -1,4 +1,4 @@
-import {Card, Skeleton} from "@heroui/react";
+import { Card, Skeleton } from "@heroui/react";
 
 export default function SkeletonComponent() {
   return (
@@ -11,7 +11,7 @@ export default function SkeletonComponent() {
           <div className="h-3 w-3/5 rounded-lg bg-default-200" />
         </Skeleton>
         <Skeleton className="w-4/5 rounded-lg">
-          <div className="h-3 w-4/5 rounded-lg bg-default-200" />
+          <div className="h-3 w-4/5 rounded-lg bg-default-200" />`
         </Skeleton>
         <Skeleton className="w-4/5 rounded-lg">
           <div className="h-3 w-4/5 rounded-lg bg-default-200" />
