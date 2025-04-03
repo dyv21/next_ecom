@@ -1,3 +1,4 @@
+"use client";
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
@@ -16,16 +17,22 @@ import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
 import { SearchIcon, Logo } from "@/components/icons";
-import { Icon } from "@iconify/react";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { ShoppingCart } from "@/components/shopping-cart/shopping-cart";
 import { ButtonWithBorderGradient } from "@/shared/ui/button-with-border-gradient/button-with-border-gradient";
 import { ThemeSwitch } from "@/shared/ui/theme-switch/theme-switch";
+import { useRouter } from "next/router";
 
 export const Navbar = () => {
+  const router = useRouter();
+  const [query, setQuery] = useState("");
+  const [debouncedQuery, setDebouncedQuery] = useState(query);
+
   const searchInput = (
     <Input
       aria-label="Search"
+      value={query}
+      onChange={(e) => setQuery(e.target.value)}
       classNames={{
         inputWrapper: "bg-default-100",
         input: "text-sm",
@@ -43,6 +50,20 @@ export const Navbar = () => {
       type="search"
     />
   );
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedQuery(query);
+    }, 500);
+
+    return () => clearTimeout(handler);
+  }, [query]);
+
+  useEffect(() => {
+    if (debouncedQuery) {
+      router.push(`/search/?q=${query}`);
+    }
+  }, [debouncedQuery]);
 
   return (
     <HeroUINavbar maxWidth="xl" position="sticky">
