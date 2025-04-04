@@ -9,7 +9,6 @@ import {
   Chip,
   Image,
   Link,
-  RadioGroup,
   ScrollShadow,
 } from "@heroui/react";
 import { Icon } from "@iconify/react";
@@ -19,7 +18,6 @@ import { Breadcrumbs } from "@heroui/breadcrumbs";
 import Review from "@/components/review/review";
 import RatingRadioGroup from "@/shared/ui/radio/rating-radio-group";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import { usePathname } from "next/navigation";
 
 export type ProductViewItem = {
