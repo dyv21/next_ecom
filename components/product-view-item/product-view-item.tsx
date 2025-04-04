@@ -19,11 +19,8 @@ import { Breadcrumbs } from "@heroui/breadcrumbs";
 import Review from "@/components/review/review";
 import RatingRadioGroup from "@/shared/ui/radio/rating-radio-group";
 import Head from "next/head";
-
-export type ProductViewItemColor = {
-  name: string;
-  hex: string;
-};
+import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 export type ProductViewItem = {
   id: string;
@@ -101,6 +98,29 @@ const ProductViewInfo = React.forwardRef<HTMLDivElement, ProductViewInfoProps>(
     const brandToUrl = (brand: string) =>
       brand.toLowerCase().split(" ").join("_");
 
+    const pathname = usePathname();
+
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: title,
+      image: images,
+      description: description,
+      brand: {
+        "@type": "Brand",
+        name: brand,
+      },
+      sku: id,
+      offers: {
+        "@type": "Offer",
+        url: `http://localhost:8080${pathname}`,
+        priceCurrency: "USD",
+        price: price,
+        availability: "https://schema.org/InStock",
+        itemCondition: "https://schema.org/NewCondition",
+      },
+    };
+
     return (
       <>
         <Head>
@@ -109,6 +129,10 @@ const ProductViewInfo = React.forwardRef<HTMLDivElement, ProductViewInfoProps>(
           </title>
           <meta name="description" content={description} />
           <meta name="keywords" content={title} />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+          />
         </Head>
         <Breadcrumbs>
           <BreadcrumbItem>
