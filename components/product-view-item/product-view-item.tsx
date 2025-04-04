@@ -18,6 +18,7 @@ import { cn } from "@heroui/react";
 import { Breadcrumbs } from "@heroui/breadcrumbs";
 import Review from "@/components/review/review";
 import RatingRadioGroup from "@/shared/ui/radio/rating-radio-group";
+import Head from "next/head";
 
 export type ProductViewItemColor = {
   name: string;
@@ -102,6 +103,13 @@ const ProductViewInfo = React.forwardRef<HTMLDivElement, ProductViewInfoProps>(
 
     return (
       <>
+        <Head>
+          <title>
+            {title} buy for ${price}
+          </title>
+          <meta name="description" content={description} />
+          <meta name="keywords" content={title} />
+        </Head>
         <Breadcrumbs>
           <BreadcrumbItem>
             <Link href={"/"}>Home</Link>
